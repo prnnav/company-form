@@ -13,7 +13,7 @@ export default function Footer() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
-      setIsVisible(scrollPosition >= pageHeight - 50); // Show footer-icons when near bottom
+      setIsVisible(scrollPosition >= pageHeight - 100);
       setScrollDirection(window.scrollY > lastScrollY ? "down" : "up");
       lastScrollY = window.scrollY;
     };
@@ -47,38 +47,35 @@ export default function Footer() {
 
       <motion.div className="footer-title">
         <motion.span
-          initial={{ y: 0, opacity: 1 }}
-          animate={scrollDirection === "up" && isVisible ? { y: 50, opacity: 0 } : { y: 0, opacity: 1 }}
+          initial={{ y: 0 }}
+          animate={scrollDirection === "up" ? { y: 100, opacity: 0 } : { y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Clever <i>Studio</i>
+          <text>Clever <i>Studio</i></text>
         </motion.span>
       </motion.div>
 
-      <motion.div
-        className="footer-icons"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="footer-bottom">
-          <p className="text">© {new Date().getFullYear()} Clever Studio. All rights reserved.</p>
-          <div className="footer-icon">
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-              <FaDiscord size={24} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <FaInstagram size={24} />
-            </a>
-            <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-              <FaWhatsapp size={24} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={24} />
-            </a>
+      {isVisible && (
+        <div className="footer-icons" style={{ position: "fixed", bottom: "0", width: "100%" }}>
+          <div className="footer-bottom">
+            <p>© 2024 Clever Studio. All rights reserved.</p>
+            <div className="footer-icon">
+              <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+                <FaDiscord size={30} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <FaInstagram size={30} />
+              </a>
+              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp size={30} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin size={30} />
+              </a>
+            </div>
           </div>
         </div>
-      </motion.div>
+      )}
     </motion.footer>
   );
 }
