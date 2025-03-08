@@ -12,23 +12,27 @@ body {
   align-items: center;
   min-height: 200px;
   z-index: 0.5;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .footer-links {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  max-width: 1700px;
+  max-width: 100vw;
   margin-top: 5vh;
   padding: 0 2%;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .footer-left, .footer-right {
   display: flex;
   flex-direction: column;
   font-size: clamp(16px, 2vw, 20px);
-  min-width: 150px;
+  min-width: 0; /* Allow shrinking below 150px */
+  flex: 1; /* Distribute space evenly */
 }
 
 .footer-title {
@@ -61,6 +65,7 @@ body {
   box-sizing: border-box;
   z-index: 9999;
   border-top: 1px solid white;
+  max-width: 100vw;
 }
 
 .text {
@@ -103,7 +108,11 @@ body {
 
 @media (max-width: 570px) {
   .footer-container {
-    width: 100%;
+    width: 100vw;
+  }
+  .footer-links {
+    width: 90%;
+    padding: 0 5px; /* Reduce padding */
   }
 }
 
@@ -111,7 +120,7 @@ body {
   .footer-bottom {
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0.5rem 5%;
+    padding: 0.5rem 2%; /* Reduce padding */
   }
 
   .footer-icons {
@@ -129,16 +138,21 @@ body {
   
   .footer-container {
     min-height: 300px;
-    width: 100%;
+    width: 100vw;
+  }
+  
+  .footer-left, .footer-right {
+    flex: 1;
+    min-width: 0; /* Allow full shrinkage */
   }
 }
 
 @media (max-width: 380px) {
   .footer-container {
-    width: 100%;
+    width: 100vw;
   }
   .footer-icon {
-    margin-right: 20px;
+    margin-right: 0;
   }
   .footer-title {
     margin-bottom: 110px;
@@ -148,12 +162,12 @@ body {
 
 @media (max-width: 355px) {
   .footer-container {
-    width: 100%;
+    width: 100vw;
   }
 }
 
 @media (max-width: 345px) {
   .footer-container {
-    width: 100%;
+    width: 100vw;
   }
 }
