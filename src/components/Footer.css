@@ -12,7 +12,6 @@ body {
   align-items: center;
   min-height: 200px;
   z-index: 0.5;
-  position: relative;
 }
 
 .footer-links {
@@ -39,9 +38,7 @@ body {
   text-align: center;
   width: 100%;
   display: block;
-  margin-bottom: 60px; /* Adjusted to align top 15% with footer-bottom */
-  position: relative;
-  z-index: 10; /* Above non-fixed elements */
+  margin-bottom: 70px;
 }
 
 .footer-bottom {
@@ -92,16 +89,15 @@ body {
   color: white;
 }
 
-/* Media Queries */
 @media (max-width: 1200px) {
   .footer-title {
-    margin-bottom: 55px; /* Adjusted */
+    margin-bottom: 75px;
   }
 }
 
 @media (max-width: 850px) {
   .footer-title {
-    margin-bottom: 50px; /* Adjusted */
+    margin-bottom: 90px;
   }
 }
 
@@ -135,10 +131,6 @@ body {
     min-height: 300px;
     width: 100%;
   }
-
-  .footer-title {
-    margin-bottom: 40px; /* Adjusted */
-  }
 }
 
 @media (max-width: 380px) {
@@ -149,7 +141,7 @@ body {
     margin-right: 20px;
   }
   .footer-title {
-    margin-bottom: 35px; /* Adjusted for font-size: 50px */
+    margin-bottom: 110px;
     font-size: 50px;
   }
 }
