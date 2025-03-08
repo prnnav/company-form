@@ -1,0 +1,290 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  border-radius: 0rem;
+  text-align: left;
+}
+
+.form-group input {
+  border-radius: 10px;
+  border-bottom: 2px solid rgb(128, 127, 127);
+}
+
+.form-input {
+  padding: 15px;
+  background-color: white;
+  border-radius: 50px / 50px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  background-color: #f0f0f0;
+  outline: none;
+  border-bottom: 2px solid #000;
+}
+
+.form-input.error {
+  border: 2px solid red;
+}
+
+.form-buttonsa {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #000;
+  border: none;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  color: white;
+  width: 150px;
+  margin-right: 0; /* Removed the original 150px margin */
+}
+
+.form-buttonsa:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.form-buttonsa:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.form-buttonsa:active {
+  background-color: black;
+  color: white;
+}
+
+.form-button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #000;
+  border: none;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  color: white;
+  width: 150px; /* Consistent width */
+  margin-right: 0; /* Remove default margin-right */
+}
+
+.form-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.form-button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.form-button:active {
+  background-color: black;
+  color: white;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.button-group, .button-groups, .button-groupsa {
+  margin-top: 20px;
+}
+
+.button-groupsa {
+  display: flex;
+  justify-content: flex-start; /* Aligns the button to the left */
+  width: 100%; /* Matches the width of the form-group */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Pushes Back to left and Next to right */
+  width: 100%; /* Matches the width of the form-group */
+}
+
+.image-preview {
+  margin-top: 20px;
+}
+
+.preview-image {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.form-title {
+  font-size: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form-buttons {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #000;
+  border: none;
+  border-radius: 2rem; /* Match form-button radius */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  color: white;
+  width: 150px; /* Consistent width */
+  margin-right: 0; /* Remove default margin */
+}
+
+.form-buttons:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.form-buttons:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.form-buttons:active {
+  background-color: black;
+  color: white;
+}
+
+.Box1 {
+  margin-left: 50px;
+  width: 500px;
+  text-align: left; /* Left-align for larger screens */
+}
+
+.Box2 {
+  margin-left: 200px;
+  width: 550px; /* Center-align for larger screens */
+}
+
+.headi {
+  color: black;
+  font-size: 90px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 800;
+  font-style: normal;
+  margin-left: 0px;
+}
+
+.fill {
+  color: black;
+  font-weight: 100;
+  font-size: 30px;
+  width: 450px;
+}
+
+h4 {
+  color: grey;
+  text-align: left; 
+}
+
+p {
+  text-align: left; /* Ensure phone and email stay left-aligned */
+}
+
+.headtw {
+  font-size: 50px;
+  font-weight: 400;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .form-container {
+    flex-direction: column;
+    padding: 4%;
+    width: 100vw;
+  }
+  
+  .Box1, .Box2 {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    text-align: center; /* Center everything on small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .button-group, .button-groups, .button-groupsa {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .form-button, .form-buttons, .form-buttonsa {
+    width: 150px; /* Maintain consistent width */
+    min-width: unset;
+    margin-right: 0;
+  }
+  
+  .Box1, .Box2 {
+    width: 100vw;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-input {
+    padding: 0.75rem;
+  }
+  
+  .form-label {
+    font-size: 0.9rem;
+  }
+  
+  .Box1, .Box2 {
+    width: 100vw;
+  }
+  
+  .headi {
+    font-size: 60px;
+  }
+  
+  .fill {
+    font-size: 20px;
+    width: 100%;
+  }
+  
+  .form-button, .form-buttons, .form-buttonsa {
+    width: 130px; /* Slightly smaller but consistent for very small screens */
+    margin-right: 0;
+  }
+  
+  .button-group, .button-groups, .button-groupsa {
+    justify-content: space-between; /* Maintain spacing */
+    gap: 10px;
+  }
+}
